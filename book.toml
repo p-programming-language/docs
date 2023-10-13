@@ -1,0 +1,6 @@
+[book]
+authors = ["Kevin Alavik"]
+language = "en"
+multilingual = false
+src = "src"
+title = "Plang Documentation"
