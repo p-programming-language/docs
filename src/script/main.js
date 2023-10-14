@@ -1,4 +1,5 @@
 const installingLink = document.querySelector('ul li a[href*="#installing"]');
+const pintFirstLink = document.querySelector('ul li a[href*="#pint-first-time"]');
 
 if (installingLink) {
     const currentURL = window.location.href;
