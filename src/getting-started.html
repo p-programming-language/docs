@@ -25,38 +25,44 @@
           <ul>
             <li><a href="getting-started.html#installing">Installing</a></li>
             <li><a href="getting-started.html#pint-first-time">Running pint for the first time</a></li>
+            <li><a href="getting-started.html#first-program">Your very first P program!</a></li>
           </ul>
       </ul>
     </div>
     <div class="page-content">
       <h1 class="page-title" id="getting-started">Getting Started</h1>
       <p>Simple tutorial on how to get started</p>
-      <div class="accordion">
-        <div class="accordion-item" id="installing">
-          <h2 class="accordion-header" id="headingOne">
-            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-              Installing
-            </button>
-          </h2>
-          <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne">
-            <div class="accordion-body">
-              <strong>This is your first step in the tutorial</strong> To get started, make sure you have installed npm. Check it by running: <code style="margin-right: 5px">npm -v</code> If that ran successfully, you can continue.<br>Now simply run: <code>npm i -g @p-lang/plang</code>
-            </div>
-          </div>
-        </div>
-        <div class="accordion-item" id="pint-first-time">
-          <h2 class="accordion-header" id="headingTwo">
-            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo">
-              Running pint for the first time
-            </button>
-          </h2>
-          <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo">
-            <div class="accordion-body">
-              Now you can run a special command called <strong>pint</strong>. This is the P interpreter, aka the program you will run your P programs with. <br>You can also now use the prepl (P read-eval-print loop) to run P directly in your terminal to start the repl just run <code>pint</code> with no arguments to run a single file using <strong>pint</strong> run:<br><code>pint &lt;filepath&gt;</code><br><br>Congrats you have successfully ran pint for the first time ever!
-            </div>
-          </div>
-        </div>
-      </div>
+      
+      <h2 id="installing">Installing</h2>
+      <p><strong>This is your first step in the tutorial</strong> To get started, make sure you have installed npm. Check it by running: <code style="margin-right: 5px">npm -v</code> <br> If that ran successfully, you can continue.<br>Now simply run: <code>npm i -g @p-lang/plang</code></p>
+
+      <h2 id="pint-first-time">Running pint for the first time</h2>
+      <p>Now you can run a special command called <strong>pint</strong>. This is the P interpreter, aka the program you will run your P programs with. <br><br>You can also now use the prepl (P read-eval-print loop) to run P directly in your terminal to start the repl just run <code>pint</code><br>To run a single file using <strong>pint</strong> run:<br><code>pint &lt;filepath&gt;</code><br>Congrats you have successfully ran pint for the first time ever!</p>
+      
+      <h2 id="first-program">Your very first P program</h2>
+      <p><strong>For this tutorial you need a text editor (preferably an IDE like <a href="https://code.visualstudio.com/">Visual Studio Code</a>)</strong></p>
+      <p>If you are using Visual Studio Code you can install <a href="https://marketplace.visualstudio.com/items?itemName=plang.vscode-p">vscode-p</a> to get features like P syntax highlighting for vscode!</p>
+      <p>It's time to write your first P program! Just a simple program that prints "<strong>Hello, Plang!</strong>" on the screen.</p>
+      <p>Get started by making a <strong><i>hello.p</i></strong> file, now open the file with your preferred IDE or text editor. Now it's time to code!</p>
+      <p>To get started, we need to import the <strong><i>writeln</i></strong> function from the standard input and output library (<strong><i>std.io</i></strong>). To do that, add this line to the top of the file:</p>
+      <code>use writeln from @std.io</code>
+      <br>
+      <p>(We need to import writeln to print a line on the screen using P)</p>
+      <p>Now <strong><i>writeln</i></strong> is accessible in the program, so now we can add another line to the file:</p>
+      <code>writeln("Hello, Plang!")</code>
+      <br>
+      <p>Congrats you have now written your first P program, to run it run:</p>
+      <code>pint hello.p</code>
+      <br>
+      <p>This should be the output</p>
+      <samp>$ pint hello.p<br>Hello, Plang!</samp>
+      <br>
+      <p>The entire code:</p>
+      <pre class="multiCode">
+use writeln from @std.io
+            
+writeln("Hello, Plang!")
+      </pre>              
     </div>
   </div>
   <footer class="webfooter">&copy; Plang 2023</footer>

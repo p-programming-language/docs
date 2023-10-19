@@ -34,7 +34,7 @@ code {
     overflow-x: auto;
 }
 
-li>a {
+*>a {
     color: rgb(0, 122, 128)
 }
 
@@ -53,4 +53,58 @@ li>a {
     position: fixed;
     bottom: 0;
     margin: 0.4em;
+}
+
+.multiCode {
+    border: 1px solid #ccc;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-radius: 4px;
+    font-family: monospace;
+    font-size: 16px;
+    line-height: -1;
+    white-space: pre-wrap;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    color: #D63384
+}
+
+.multiCode p {
+    margin: 0;
+    align-self: flex-start;
+    color: #D63384
+}
+
+code {
+    border: 1px solid #ccc;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-radius: 4px;
+    font-family: monospace;
+    font-size: 16px;
+    line-height: 1.5;
+    white-space: pre-wrap;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+}
+
+code p {
+    margin: 0;
+    align-self: flex-start;
+}
+
+samp {
+    border: 1px solid #ccc;
+    padding: 10px;
+    background-color: #f8f9fa;
+    border-radius: 4px;
+    font-family: monospace;
+    font-size: 16px;
+    line-height: 1.5;
+    white-space: pre-wrap;
+    display: flex;
+    flex-direction: column;
+    margin: 0;
 }
