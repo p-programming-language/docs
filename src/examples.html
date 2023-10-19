@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Plang Documents - Variables</title>
-    <meta name="description" content="More in depth info about using variables and defining them">
+    <title>Plang Documents - Function</title>
+    <meta name="description" content="More in depth info about using functions and defining them">
     <link rel="stylesheet" href="css/colors.css">
     <link rel="stylesheet" href="css/main.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
@@ -27,7 +27,7 @@
               <li><a href="getting-started.html#pint-first-time">Running pint for the first time</a></li>
               <li><a href="getting-started.html#first-program">Your very first P program!</a></li>
             </ul>
-            <li><a class="current" href="variables.html">Variables</a></li>
+            <li><a href="variables.html">Variables</a></li>
             <ul>
               <li><a href="variables.html#defining-variables">Defining Variables</a></li>
               <li><a href="variables.html#using-variables">Using Variables</a></li>
@@ -37,6 +37,7 @@
               <li><a href="functions.html#defining-functions">Defining Functions</a></li>
               <li><a href="functions.html#using-functions">Using Functions</a></li>
             </ul>
+            <li><a class="current" href="examples.html">Examples</a></li>
             <ul>
                 <li><a href="examples.html#fizz-buzz">Fizz Buzz</a></li>
                 <li><a href="examples.html#http-server">Simple HTTP Server</a></li>
@@ -45,40 +46,55 @@
         </ul>
       </div>
       <div class="page-content">
-        <h1 class="page-title">Variables</h1>
-        <p>Simple introduction to understanding how variables work and how you define them and how you use them</p>
-        <h2 id="defining-variables">Defining Variables</h2>
-        <p>You can define a variable like this:</p>
-        <code>*mut type name = value</code>
-        <p class="highlight">(* = optional)</p>
-        <p><strong><i>type</i></strong> can be any of these: <strong>string, int, float, bool</strong> but also custom types (more on them <a href="custom-types.html">here</a>)<br><strong><i>name</i></strong> can be any letters, numbers but not any "-" or " " in them<br><strong><i>mut</i></strong> is used to say if the variable is modifiable, basically saying if you can change the value or not. To make a variable editable you do: <code>mut type name = value</code> if not its just <code>type name = value</code></p>
-        <p>An example of defining a variable called name with the value "Kevin":<code>string name = "Kevin"</code></p>
-        <br>
-        <h2 id="using-variables">Using Variables</h2>
-        <p>To use a variable you can simple just call its name, example:
-          <pre class="multiCode">
-use writeln from @std.io
+        <h1 class="page-title">Examples</h1>
+        <p>Some simple examples</p>
+        <h2 id="fizz-buzz">Fizz Buzz</h2>
+        <pre class="multiCode">
+use * from @std.io
 
-string name = "Kevin"
-writeln(name)</pre>
-          <br>
-          Output:
-          <samp>Kevin</samp>   
-        </p>
-        <p>To define a editable variable you can do: <pre class="multiCode">
-use writeln from @std.io
+Range range = 1..100
 
-mut age = 18
-writeln("I am %{age}")
-++age
-writeln("I am %{age}")</pre>
+every int n in range {
+    if n % 3 == 0 and n % 5 == 0 {
+        writeln("FizzBuzz")
+    } else if n % 3 == 0 {
+        writeln("Fizz")
+    } else if n % 5 == 0 {
+        writeln("Buzz")
+    } else {
+        writeln(n)
+    }
+}</pre>
         <br>
-        Output:
-        <samp>I am 18
-I am 19</samp>
-      </p>
+        <h2 id="http-server">Simple HTTP Server</h2>
+        <pre class="multiCode">
+use Server from @http
+use * from @std.io
+
+any server = new Server
+void fn handle(any req, any res) {
+    res.send('&lt;h1&gt;Made with love in PLang&lt;/h1&gt;')
+}
+
+int port = 8080
+writeln("Listening on http://localhost:%{port}")
+server.start(port, handle)</pre>
+        <br>
+        <h2 id="http-request">Simple HTTP Request</h2>
+        <pre class="multiCode">
+use writeln from @std/io
+use request from @http
+
+interface Response {
+  () :: any json
+}
+
+Response res = request("https://api.sampleapis.com/coffee/hot", {
+  method: "GET"
+})
+
+writeln(res.json())</pre>
       </div>
     </div>
-    <footer class="webfooter">&copy; Plang 2023</footer>
 </body>
 </html>
