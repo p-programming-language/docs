@@ -73,7 +73,8 @@ code {
 .multiCode p {
     margin: 0;
     align-self: flex-start;
-    color: #D63384
+    color: #D63384;
+    font-family: monospace;
 }
 
 code {
@@ -93,6 +94,7 @@ code {
 code p {
     margin: 0;
     align-self: flex-start;
+    font-family: monospace;
 }
 
 samp {
@@ -107,4 +109,10 @@ samp {
     display: flex;
     flex-direction: column;
     margin: 0;
+}
+
+.highlight {
+    color: rgb(61, 61, 61);
+    font-size: 12px;
+    
 }

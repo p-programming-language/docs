@@ -20,7 +20,7 @@
             alt="P Icon"
         /></a>
         <ul>
-            <li><a class="current" href="index.html">Introduction</a></li>
+            <li><a href="index.html">Introduction</a></li>
             <li><a href="getting-started.html">Getting Started</a></li>
             <ul>
               <li><a href="getting-started.html#installing">Installing</a></li>
@@ -28,13 +28,48 @@
               <li><a href="getting-started.html#first-program">Your very first P program!</a></li>
             </ul>
             <li><a class="current" href="variables.html">Variables</a></li>
+            <ul>
+              <li><a href="variables.html#defining-variables">Defining Variables</a></li>
+            </ul>
             <li><a href="functions.html">Function</a></li>
         </ul>
       </div>
       <div class="page-content">
         <h1 class="page-title">Variables</h1>
+        <p>Simple introduction to understanding how variables work and how you define them and how you use them</p>
+        <h2 id="defining-variables">Defining Variables</h2>
+        <p>You can define a variable like this:</p>
+        <code>*mut type name = value</code>
+        <p class="highlight">(* = optional)</p>
+        <p><strong><i>type</i></strong> can be any of these: <strong>string, int, float, bool</strong> but also custom types (more on them <a href="custom-types.html">here</a>)<br><strong><i>name</i></strong> can be any letters, numbers but not any "-" or " " in them<br><strong><i>mut</i></strong> is used to say if the variable is modifiable, basically saying if you can change the value or not. To make a variable editable you do: <code>mut type name = value</code> if not its just <code>type name = value</code></p>
+        <p>An example of defining a variable called name with the value "Kevin":<code>string name = "Kevin"</code></p>
+        <br>
+        <h2 id="using-variables">Using Variables</h2>
+        <p>To use a variable you can simple just call its name, example:
+          <pre class="multiCode">
+use writeln from @std.io
 
+string name = "Kevin"
+writeln(name)</pre>
+          <br>
+          Output:
+          <samp>Kevin</samp>   
+        </p>
+        <p>To define a editable variable you can do: <pre class="multiCode">
+use writeln from @std.io
+
+mut age = 18
+writeln("I am %{age}")
+++age
+writeln("I am %{age}")
+        </pre>
+        <br>
+        Output:
+        <samp>I am 18
+I am 19</samp>
+      </p>
       </div>
     </div>
+    <footer class="webfooter">&copy; Plang 2023</footer>
 </body>
 </html>
