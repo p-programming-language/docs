@@ -1,5 +1,7 @@
 const sidebarItems = [
-    { text: 'Introduction', href: 'index.html' },
+    { text: 'Introduction', href: 'index.html', subitems: [
+        { text: 'Links', href: 'index.html#links'}
+    ]},
     { text: 'Getting Started', href: 'getting-started.html', subitems: [
         { text: 'Installing', href: 'getting-started.html#installing' },
         { text: 'Running pint for the first time', href: 'getting-started.html#pint-first-time' },
