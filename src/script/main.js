@@ -13,6 +13,9 @@ const sidebarItems = [
         { text: 'Defining Functions', href: 'functions.html#defining-functions' },
         { text: 'Using Functions', href: 'functions.html#using-functions' }
     ] },
+    { text: 'Types', href: 'types.html', subitems: [
+        { text: 'Built in types', href: 'types.html#built-in-types' },
+    ] },
     { text: 'Examples', href: 'examples.html', subitems: [
         { text: 'Fizz Buzz', href: 'examples.html#fizz-buzz' },
         { text: 'Simple HTTP Server', href: 'examples.html#http-server' },
